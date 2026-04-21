@@ -4,6 +4,8 @@
 
 在线仓库：<https://github.com/huaixushiliu16/LYF-smart-cycling-computer>
 
+硬件开源地址（立创开源）：<https://oshwhub.com/lyf6412/project_ungphcsp>
+
 内容包含 **PCB 资料/实物照片** 与 **ESP32-S3 固件工程**，面向一款带触摸屏的骑行码表类设备：BLE 心率/CSCS、速度/踏频、IMU、RGB 状态灯、蜂鸣器等，界面基于 **LVGL**。
 
 ## 目录说明
