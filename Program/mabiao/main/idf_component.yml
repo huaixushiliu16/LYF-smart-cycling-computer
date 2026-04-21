@@ -1,0 +1,5 @@
+dependencies:
+  idf: ">=5.3"
+  lvgl/lvgl: "~8.3.0"
+  esp_lcd_ili9341: "^1.0"
+  espressif/led_strip: "^2.4.1"

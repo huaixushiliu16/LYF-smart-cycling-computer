@@ -1,0 +1,27 @@
+# 本仓库仅收录 PCB 与 Program；其他本地目录勿提交
+Thesis/
+
+# 编辑器与本地工具（路径因人而异，不上传）
+.vscode/
+.cursor/
+.clangd/
+
+# 缓存与构建日志
+.cache/
+**/build.log
+
+# Windows 文件夹元数据（非项目文件）
+**/desktop.ini
+**/Desktop.ini
+
+# Cursor 对话导出等临时文档（保留 DOC 下正式文档如论文）
+Program/mabiao/DOC/cursor_*.md
+
+# LovyanGFX 组件内范例与 PC/Pico 演示工程（不参与本 ESP32 工程编译，体积大）
+Program/mabiao/components/LovyanGFX/examples/
+Program/mabiao/components/LovyanGFX/examples_for_PC/
+Program/mabiao/components/LovyanGFX/examples_for_picosdk/
+Program/mabiao/components/LovyanGFX/.github/
+
+# 超过 GitHub 100MB 限制的本地压缩包（如需发布请用 Release/网盘/LFS）
+Program/mabiao.zip

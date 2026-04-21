@@ -1,0 +1,14 @@
+CompileFlags:
+  Remove: 
+    - -mlongcalls
+    - -mdisable-hardware-atomics
+    - -fstrict-volatile-bitfields
+    - -fno-tree-switch-conversion
+
+Diagnostics:
+  UnusedIncludes: None
+  MissingIncludes: None
+  Suppress: 
+    - unknown_argument
+    - unused_function
+    - unused_include
