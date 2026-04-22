@@ -1386,7 +1386,6 @@ static int bsp_ble_gap_event(struct ble_gap_event *event, void *arg)
         // ????
         ESP_LOGI(TAG, "Disconnect; conn_handle=%d reason=%d",
                  event->disconnect.conn.conn_handle, event->disconnect.reason);
-        bsp_buzzer_request(BSP_BUZZ_PATTERN_DISCONNECT);
 
         // ??Peer
         peer_delete(event->disconnect.conn.conn_handle);

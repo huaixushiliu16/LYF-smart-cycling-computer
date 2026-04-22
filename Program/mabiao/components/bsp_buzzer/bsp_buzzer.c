@@ -74,6 +74,45 @@ static void play_pattern(bsp_buzz_pattern_t pattern)
         vTaskDelay(pdMS_TO_TICKS(45));
         buzzer_pwm_off();
         break;
+    case BSP_BUZZ_PATTERN_BOOT:
+        buzzer_pwm_on();
+        vTaskDelay(pdMS_TO_TICKS(60));
+        buzzer_pwm_off();
+        break;
+    case BSP_BUZZ_PATTERN_REC_START:
+        buzzer_pwm_on();
+        vTaskDelay(pdMS_TO_TICKS(120));
+        buzzer_pwm_off();
+        break;
+    case BSP_BUZZ_PATTERN_REC_SAVED:
+        buzzer_pwm_on();
+        vTaskDelay(pdMS_TO_TICKS(50));
+        buzzer_pwm_off();
+        vTaskDelay(pdMS_TO_TICKS(80));
+        buzzer_pwm_on();
+        vTaskDelay(pdMS_TO_TICKS(50));
+        buzzer_pwm_off();
+        break;
+    case BSP_BUZZ_PATTERN_ERROR:
+        for (int i = 0; i < 3; i++) {
+            buzzer_pwm_on();
+            vTaskDelay(pdMS_TO_TICKS(30));
+            buzzer_pwm_off();
+            if (i != 2) {
+                vTaskDelay(pdMS_TO_TICKS(60));
+            }
+        }
+        break;
+    case BSP_BUZZ_PATTERN_BATTERY_LOW:
+        for (int i = 0; i < 3; i++) {
+            buzzer_pwm_on();
+            vTaskDelay(pdMS_TO_TICKS(80));
+            buzzer_pwm_off();
+            if (i != 2) {
+                vTaskDelay(pdMS_TO_TICKS(200));
+            }
+        }
+        break;
     default:
         buzzer_pwm_off();
         break;

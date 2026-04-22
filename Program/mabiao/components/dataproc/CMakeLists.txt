@@ -15,7 +15,7 @@ idf_component_register(
     INCLUDE_DIRS "utils/datacenter"
                  "utils/datacenter/PingPongBuffer"
                  "include"
-    REQUIRES hal_layer lvgl bsp_sd app
+    REQUIRES hal_layer lvgl bsp_sd app bsp_buzzer
 )
 
 # 设置C++标准

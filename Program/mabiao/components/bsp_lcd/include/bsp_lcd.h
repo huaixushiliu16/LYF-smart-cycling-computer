@@ -50,7 +50,7 @@ esp_err_t bsp_lcd_deinit(void);
 /**
  * @brief 获取LovyanGFX实例指针（供LVGL flush回调使用）
  * 
- * @return void* LGFX_SSS实例指针，需要在C++中转换为LGFX_SSS*
+ * @return void* LovyanGFX 实例指针，需要在 C++ 中转换为对应的 LGFX_* 类型
  */
 void *bsp_lcd_get_lgfx(void);
 

@@ -9,7 +9,7 @@
 #include "bsp_lcd.h"
 #include "bsp_touch.h"
 #include "SystemMonitor.h"
-#include "lgfx_sss.hpp"
+#include "lgfx_mabiao.hpp"  // LGFX_MABIAO
 #include "esp_log.h"
 #include "esp_err.h"
 #include "freertos/FreeRTOS.h"
@@ -34,7 +34,7 @@ static const char *TAG = "LVGL_PORT";
 
 static SemaphoreHandle_t s_lvgl_mutex = NULL;
 static esp_timer_handle_t s_lvgl_tick_timer = NULL;
-static LGFX_SSS *s_lcd = NULL;
+static LGFX_MABIAO *s_lcd = NULL;
 
 /**
  * @brief LVGL flush回调函数（使用LovyanGFX逐行DMA刷新）
@@ -187,7 +187,7 @@ esp_err_t lvgl_port_init(void)
     esp_err_t ret = ESP_OK;
 
     // 获取LovyanGFX实例
-    s_lcd = (LGFX_SSS *)bsp_lcd_get_lgfx();
+    s_lcd = (LGFX_MABIAO *)bsp_lcd_get_lgfx();
     if (s_lcd == NULL) {
         ESP_LOGE(TAG, "LGFX instance is NULL, LCD not initialized?");
         return ESP_ERR_INVALID_STATE;

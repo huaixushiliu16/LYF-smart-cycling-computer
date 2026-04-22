@@ -524,7 +524,7 @@ void app_main(void)
 {
     ESP_LOGI(TAG, "========================================");
     ESP_LOGI(TAG, "ESP32-S3 Smart Cycling Computer");
-    ESP_LOGI(TAG, "Project: SSS");
+    ESP_LOGI(TAG, "Project: mabiao");
     ESP_LOGI(TAG, "Framework: ESP-IDF v5.3.1");
     ESP_LOGI(TAG, "Chip: %s", esp_get_idf_version());
     ESP_LOGI(TAG, "========================================");
@@ -757,4 +757,5 @@ void app_main(void)
 #endif
 
     ESP_LOGI(TAG, "System initialized successfully");
+    bsp_buzzer_request(BSP_BUZZ_PATTERN_BOOT);
 }

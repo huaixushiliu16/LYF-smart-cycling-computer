@@ -6,13 +6,13 @@
  */
 
 #include "bsp_lcd.h"
-#include "lgfx_sss.hpp"
+#include "lgfx_mabiao.hpp"
 #include "esp_log.h"
 
 static const char *TAG = "BSP_LCD";
 
 // LovyanGFX全局实例
-static LGFX_SSS *s_lcd = nullptr;
+static LGFX_MABIAO *s_lcd = nullptr;
 static bool s_initialized = false;
 
 esp_err_t bsp_lcd_init(void)
@@ -29,7 +29,7 @@ esp_err_t bsp_lcd_init(void)
              BSP_LCD_PIN_CS, BSP_LCD_PIN_DC, BSP_LCD_PIN_RST, BSP_LCD_PIN_BL);
 
     // 创建LovyanGFX实例
-    s_lcd = new LGFX_SSS();
+    s_lcd = new LGFX_MABIAO();
     if (s_lcd == nullptr) {
         ESP_LOGE(TAG, "Failed to create LGFX instance");
         return ESP_ERR_NO_MEM;

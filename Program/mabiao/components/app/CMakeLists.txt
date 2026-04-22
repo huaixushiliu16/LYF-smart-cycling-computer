@@ -103,7 +103,7 @@ idf_component_register(
                  "utils/lv_poly_line"
                  "utils/TrackFilter"
                  "utils/PointContainer"
-    REQUIRES dataproc hal_layer lvgl esp_timer freertos bsp_sd bsp_ble
+    REQUIRES dataproc hal_layer lvgl esp_timer freertos bsp_sd bsp_ble bsp_buzzer
 )
 
 # 设置C++标准

@@ -2,6 +2,7 @@
 #include "PageManager.h"
 #include "ResourcePool.h"
 #include "hal_def.h"
+#include "bsp_buzzer.h"
 #include "esp_log.h"
 #include <cstdio>
 #include <cmath>
@@ -302,6 +303,7 @@ void Dialplate::onRecord(bool longPress)
             if (!Model.GetGPSReady())
             {
                 ESP_LOGW(TAG, "GPS has not ready, can't start record");
+                bsp_buzzer_request(BSP_BUZZ_PATTERN_ERROR);
                 return;
             }
 
@@ -309,6 +311,7 @@ void Dialplate::onRecord(bool longPress)
             SetBtnRecImgSrc("pause");
             recState = RECORD_STATE_RUN;
             ESP_LOGI(TAG, "Recording started");
+            bsp_buzzer_request(BSP_BUZZ_PATTERN_REC_START);
         }
         break;
     case RECORD_STATE_RUN:
@@ -343,6 +346,7 @@ void Dialplate::onRecord(bool longPress)
             SetBtnRecImgSrc("start");
             recState = RECORD_STATE_READY;
             ESP_LOGI(TAG, "Recording stopped");
+            bsp_buzzer_request(BSP_BUZZ_PATTERN_REC_SAVED);
         }
         else
         {

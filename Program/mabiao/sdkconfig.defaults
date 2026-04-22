@@ -1,5 +1,5 @@
 # sdkconfig.defaults - ESP32-S3 Smart Cycling Computer Default Configuration
-# Project: SSS
+# Project: mabiao
 
 # Chip target
 CONFIG_IDF_TARGET="esp32s3"
